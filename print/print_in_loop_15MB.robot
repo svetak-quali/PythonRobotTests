@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     prints random string in range of 1800
+Documentation     prints random string in range of 1800, report size will be 15MB
 Library           String
 
 *** Test Cases ***
