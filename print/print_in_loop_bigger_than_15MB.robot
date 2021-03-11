@@ -6,6 +6,6 @@ Library           String
 For-Loop-In-Range
     FOR    ${INDEX}    IN RANGE    1    20000
         Log To Console    ${INDEX}
-        ${RANDOM_STRING}=    Generate Random String    1500
+        ${RANDOM_STRING}=    Generate Random String    3000
         Log To Console    ${RANDOM_STRING}
     END
