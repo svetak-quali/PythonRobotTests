@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     prints random string in range of 30000, report size will be bigger than 15MB
+Documentation     prints random string in range of 40000, report size will be bigger than 15MB
 Library           String
 
 *** Test Cases ***
