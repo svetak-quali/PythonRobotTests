@@ -4,8 +4,8 @@ Library           String
 
 *** Test Cases ***
 For-Loop-In-Range
-    FOR    ${INDEX}    IN RANGE    1    17000
+    FOR    ${INDEX}    IN RANGE    1    20000
         Log To Console    ${INDEX}
-        ${RANDOM_STRING}=    Generate Random String    1000
+        ${RANDOM_STRING}=    Generate Random String    1500
         Log To Console    ${RANDOM_STRING}
     END
