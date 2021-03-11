@@ -5,7 +5,7 @@ Library           String
 *** Test Cases ***
 For-Loop-In-Range
     FOR    ${INDEX}    IN RANGE    1    100
-        Log    ${INDEX}
+        Log To Console    ${INDEX}
         ${RANDOM_STRING}=    Generate Random String    ${INDEX}
-        Log    ${RANDOM_STRING}
+        Log To Console    ${RANDOM_STRING}
     END
