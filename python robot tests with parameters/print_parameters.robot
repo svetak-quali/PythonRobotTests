@@ -2,14 +2,14 @@
 Documentation     prints the parameters values
 
 *** Variables ***
-${param1}	
+${param 1}	
 ${param2}
 ${param3}
 ${param4}				
 
 *** Test Case ***
 print param 1
-	print    ${param1}
+	print    ${param 1}
 	
 print param 2
 	print    ${param2}
