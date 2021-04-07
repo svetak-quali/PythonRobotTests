@@ -3,7 +3,7 @@ Documentation     Log sandbox id
 Library    Collections
 
 *** Test Case ***
-Print sandbox info
+Print sandbox id
 	id        ${sandbox.id}
      
 
