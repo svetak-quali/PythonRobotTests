@@ -4,7 +4,7 @@ from uuid import UUID
 class QualiAPILibrary(object):
 	def __init__(self, cloudshell_address, quali_api_port, auth_token='', domain="Global", sandbox_uuid: UUID =""):
 		self.host = cloudshell_address + ':' + str(quali_api_port)
-		url = f'http://{host}/Api/Auth/Login'
+		url = f'http://{self.host}/Api/Auth/Login'
 		body = {"Token": auth_token, 
 				"Domain": domain
 		}
