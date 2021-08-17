@@ -1,7 +1,7 @@
 from os import path
 import requests
 from uuid import UUID
-import os
+import sys
 
 class QualiAPILibrary(object):
 	def __init__(self, cloudshell_address, quali_api_port, auth_token='', domain="Global", sandbox_uuid: UUID =""):
@@ -17,7 +17,8 @@ class QualiAPILibrary(object):
 
 	def attach_file_to_reservation(self):
 		print(self.token)
-		print("Current working dir : %s" % os.getcwd())
+		for path in sys.path:
+			print(path)
 		url = f'http://{self.host}/Api/Package/AttachFileToReservation'
 		headers={"Authorization": self.token}
 		path = "C:\\test.txt"
