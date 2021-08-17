@@ -17,7 +17,7 @@ class QualiAPILibrary(object):
 	def attach_file_to_reservation(self):
 		url = f'http://{self.host}/Api/Package/AttachFileToReservation'
 		headers={"Authorization": self.token}
-		path = f"C:\\test.txt"
+		path = "C:/test.txt"
 		saved_file_name = 'test'
 		overwriteIfExists=True
 		data = {
