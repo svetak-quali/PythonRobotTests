@@ -17,11 +17,12 @@ class QualiAPILibrary(object):
 
 	def attach_file_to_reservation(self):
 		print(self.token)
+		f = open("myfile.txt", "x")
 		for path in sys.path:
 			print(path)
 		url = f'http://{self.host}/Api/Package/AttachFileToReservation'
 		headers={"Authorization": self.token}
-		path = "C:\\test.txt"
+		path = "myfile.txt"
 		saved_file_name = 'test'
 		overwriteIfExists=True
 		data = {
