@@ -1,3 +1,4 @@
+from os import path
 import requests
 from uuid import UUID
 
@@ -13,9 +14,12 @@ class QualiAPILibrary(object):
 		if sandbox_uuid:
 			self.sandbox_id = str(sandbox_uuid)
 
-	def attach_file_to_reservation(self, path, saved_file_name, overwriteIfExists=True):
+	def attach_file_to_reservation(self):
 		url = f'http://{self.host}/Api/Package/AttachFileToReservation'
 		headers={"Authorization": self.token}
+		path = 'C:\\test.txt'
+		saved_file_name = 'test'
+		overwriteIfExists=True
 		data = {
 			"reservationId": self.sandbox_id,
 			"saveFileAs": saved_file_name,
