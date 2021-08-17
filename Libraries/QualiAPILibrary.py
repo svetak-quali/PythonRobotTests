@@ -1,6 +1,7 @@
 from os import path
 import requests
 from uuid import UUID
+import os
 
 class QualiAPILibrary(object):
 	def __init__(self, cloudshell_address, quali_api_port, auth_token='', domain="Global", sandbox_uuid: UUID =""):
@@ -16,9 +17,10 @@ class QualiAPILibrary(object):
 
 	def attach_file_to_reservation(self):
 		print(self.token)
+		print("Current working dir : %s" % os.getcwd())
 		url = f'http://{self.host}/Api/Package/AttachFileToReservation'
 		headers={"Authorization": self.token}
-		# path = "C:\\test.txt"
+		path = "C:\\test.txt"
 		saved_file_name = 'test'
 		overwriteIfExists=True
 		data = {
@@ -27,7 +29,7 @@ class QualiAPILibrary(object):
 			"overwriteIfExists": overwriteIfExists
 		}
 
-		with open(r'C:\test.txt', 'rb') as attached_file:
+		with open(path, 'rb') as attached_file:
 			files = {'QualiPackage': attached_file}
 			r = requests.post(url=url, headers=headers, data=data, files=files)
 
