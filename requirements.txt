@@ -1,2 +1,3 @@
 robotframework == 3.2.2
 cloudshell-automation-api
+requests
