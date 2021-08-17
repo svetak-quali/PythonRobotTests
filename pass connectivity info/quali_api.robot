@@ -8,4 +8,4 @@ attch file to sandbox
 
 *** Keywords ***
 attach file 
-	Attach File To Reservation	${'C:\\test.txt'} ${'test'} ${True}
+	Attach File To Reservation	${C:\\test.txt} ${'test'} ${True}
