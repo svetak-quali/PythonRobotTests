@@ -10,7 +10,7 @@ class QualiAPILibrary(object):
 				"Domain": domain
 		}
 		r = requests.put(url=url, json=body)
-		self.token = "basic " + r.text
+		self.token = "basic " + r.json()
 		if sandbox_uuid:
 			self.sandbox_id = str(sandbox_uuid)
 
