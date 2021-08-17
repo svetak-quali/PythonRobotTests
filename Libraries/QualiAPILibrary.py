@@ -15,9 +15,10 @@ class QualiAPILibrary(object):
 			self.sandbox_id = str(sandbox_uuid)
 
 	def attach_file_to_reservation(self):
+		print(self.token)
 		url = f'http://{self.host}/Api/Package/AttachFileToReservation'
 		headers={"Authorization": self.token}
-		path = "C:/test.txt"
+		path = "C:\\test.txt"
 		saved_file_name = 'test'
 		overwriteIfExists=True
 		data = {
@@ -29,3 +30,4 @@ class QualiAPILibrary(object):
 		with open(path, 'rb') as attached_file:
 			files = {'QualiPackage': attached_file}
 			r = requests.post(url=url, headers=headers, data=data, files=files)
+
