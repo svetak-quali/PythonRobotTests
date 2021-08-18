@@ -7,6 +7,18 @@ Library   ../Libraries/QualiAPILibrary.py	${connectivity.server_address}	${conne
 attch file to sandbox
 	attach file
 
+get list of the attached files
+	get attachments
+
+delete attached file
+	delete file
+
 *** Keywords ***
 attach file 
 	Attach File To Reservation
+
+get attachments
+	Get Reservation Attachments Details
+
+delete file
+	Delete File From Reservation

@@ -1,4 +1,5 @@
 import requests
+import json
 from uuid import UUID
 
 class QualiAPILibrary(object):
@@ -16,7 +17,7 @@ class QualiAPILibrary(object):
 	def attach_file_to_reservation(self):
 		url = f'http://{self.host}/Api/Package/AttachFileToReservation'
 		headers={"Authorization": self.token}
-		f = open("myfile.txt", "x")
+		open("myfile.txt", "x")
 		path = "myfile.txt"
 		saved_file_name = 'test'
 		overwriteIfExists=True
@@ -28,5 +29,33 @@ class QualiAPILibrary(object):
 
 		with open(path, 'rb') as attached_file:
 			files = {'QualiPackage': attached_file}
-			r = requests.post(url=url, headers=headers, data=data, files=files)
+			requests.post(url=url, headers=headers, data=data, files=files)
 
+	def get_reservation_attachments_details(self):
+		"""
+			Get the list of files currently attached to a Sandbox
+			:param sandbox_id: 
+			:return: List of files attached to the Sandbox
+			:rtype: list[str]
+		"""
+		url = f'http://{self.host}/Api/Package/GetReservationAttachmentsDetails/{self.sandbox_id}'
+		get_result = requests.get(url=url, headers={"Authorization": self.token})
+		if 200 <= get_result.status_code < 300:
+			result_json = json.loads(get_result.content)
+			if result_json["Success"]:
+				return result_json["AllAttachments"]
+			else:
+				raise ValueError(result_json["ErrorMessage"])
+		else:
+			raise ValueError(get_result.content)
+
+	def delete_file_from_reservation(self):
+		"""
+			Delete an attached file from a Sandbox 
+			:param sandbox_id: The ID of the Sandbox to delete the file from
+			:param filename: the exact name of the file to delete
+		"""
+		filename = 'test'
+		url = f'http://{self.host}/Api/Package/DeleteFileFromReservation'
+		delete_result = requests.post(url=url, json={"reservationId": self.sandbox_id, "FileName": filename}, headers={"Authorization": self.token})
+		return delete_result
