@@ -18,12 +18,7 @@ class QualiAPILibrary(object):
 	def attach_file_to_reservation(self):
 		url = f'http://{self.host}/Api/Package/AttachFileToReservation'
 		headers={"Authorization": self.token}
-		if os.path.exists("myfile.txt"):
-  			os.remove("myfile.txt")
-		else:
-  			print("The file does not exist")
-		# open("myfile.txt", "x")
-		# path = "myfile.txt"
+		path = "test.txt"
 		saved_file_name = 'test'
 		data = {
 			"reservationId": self.sandbox_id,
