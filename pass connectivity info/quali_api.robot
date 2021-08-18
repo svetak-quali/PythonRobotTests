@@ -16,8 +16,7 @@ delete attached file
 	delete file
 
 *** Keywords ***
-create some file
-	Create File    test.txt
+Create File    test.txt
 
 attach file 
 	Attach File To Reservation
@@ -28,5 +27,4 @@ get attachments
 delete file
 	Delete File From Reservation
 
-remove the file
-	Remove File    test.txt
+Remove File    test.txt
