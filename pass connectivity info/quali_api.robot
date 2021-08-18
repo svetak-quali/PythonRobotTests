@@ -9,6 +9,7 @@ Suite Teardown	Teardown Process
 *** Test Case *** 
 attch file to sandbox
 	attach file
+	sleep 60 sec
 
 get list of the attached files
 	get attachments
@@ -29,6 +30,9 @@ get attachments
 
 delete file
 	Delete File From Reservation
+
+sleep 60 sec
+	sleep	60s
 
 Teardown Process
 	Log	"Currently in Teardown"
