@@ -20,11 +20,10 @@ class QualiAPILibrary(object):
 		open("myfile.txt", "x")
 		path = "myfile.txt"
 		saved_file_name = 'test'
-		overwriteIfExists= 'true'
 		data = {
 			"reservationId": self.sandbox_id,
 			"saveFileAs": saved_file_name,
-			"overwriteIfExists": overwriteIfExists
+			"overwriteIfExists": True
 		}
 
 		with open(path, 'rb') as attached_file:
