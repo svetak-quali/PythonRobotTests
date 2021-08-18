@@ -2,6 +2,8 @@
 Documentation     create Quali API session and attach some file to the sandbox 
 Library    Collections
 Library   ../Libraries/QualiAPILibrary.py	${connectivity.server_address}	${connectivity.quali_api_port}	${connectivity.admin_auth_token}	Global	${sandbox.id}
+Suite Setup    create some file
+Suite Teardown    remove the file
 
 *** Test Case *** 
 attch file to sandbox
@@ -14,6 +16,9 @@ delete attached file
 	delete file
 
 *** Keywords ***
+create some file
+	Create File    test.txt
+
 attach file 
 	Attach File To Reservation
 
@@ -22,3 +27,6 @@ get attachments
 
 delete file
 	Delete File From Reservation
+
+remove the file
+	Remove File    test.txt
