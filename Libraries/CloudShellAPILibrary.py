@@ -5,7 +5,7 @@ from uuid import UUID
 
 class CloudShellAPILibrary(object):
     def __init__(self, cloudshell_address, user="admin", auth_token='', domain="Global", sandbox_uuid: UUID =""):
-        self.api_session = CloudShellAPISession(cloudshell_address, user, token_id=auth_token, domain=domain, quali_api_post=9004)
+        self.api_session = CloudShellAPISession(cloudshell_address, user, token_id=auth_token, domain=domain, post=9004)
         if sandbox_uuid:
             self.sandbox_id = str(sandbox_uuid)
 
