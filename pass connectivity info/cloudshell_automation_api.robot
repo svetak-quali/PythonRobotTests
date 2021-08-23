@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     create cloudshell automation api session and write the connectivity data to the sandbox 
 Library    Collections
-Library   ../Libraries/CloudShellAPILibrary.py	${connectivity.server_address}	admin	${connectivity.admin_auth_token}	Global	${sandbox.id}
+Library   ../Libraries/CloudShellAPILibrary.py	${connectivity.server_address}	${connectivity.cloudshell_api_port}	admin	${connectivity.admin_auth_token}	Global	${sandbox.id}
 *** Test Case *** 
 log connectivity data to the test report
 	print_connectivity	${connectivity}
