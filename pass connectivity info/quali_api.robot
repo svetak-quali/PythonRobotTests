@@ -9,6 +9,7 @@ Suite Teardown	Teardown Process
 *** Test Case *** 
 attch file to sandbox
 	attach file
+	sleep 60 sec
 
 *** Keywords ***
 Setup Process
@@ -17,6 +18,9 @@ Setup Process
 
 attach file 
 	Attach File To Reservation
+
+sleep 60 sec
+	sleep	60s
 
 Teardown Process
 	Log	"Currently in Teardown"
