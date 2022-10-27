@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     A test suite containing one test that sleep for 20sec. jjfdfdsdsdsfsfsdfsdfdfdf
+Documentation     A test suite containing one test that sleep for 20sec. jjfddsfsfsdfsdfdfdf
 ...				  The suite should pass successfully.
 *** Test Case ***
 Sleep for 20sec
